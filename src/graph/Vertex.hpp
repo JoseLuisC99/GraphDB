@@ -5,25 +5,24 @@
 #include <map>
 #include <string>
 #include <any>
-#include "Edge.hpp"
 
 class Vertex {
     uint64_t _id;
-    std::vector<Edge*> _in;
-    std::vector<Edge*> _out;
     std::map<std::string, std::any> attr;
+    std::vector<uint64_t> _in;
+    std::vector<uint64_t> _out;
 
     static uint64_t VERTEX_ID;
 public:
     Vertex(): _id(VERTEX_ID++) {}
 
     uint64_t getID();
-    template<typename T>
-    void addAttr(std::string, T);
-    template<typename T>
-    T getValue(std::string);
-    void addInEdge(Edge&);
-    void addOutEdge(Edge&);
+    void addIn(uint64_t);
+    void addOut(uint64_t);
+    template<typename T> void addAttr(std::string, T);
+    template<typename T> T getValue(std::string);
 };
+
+#include "Vertex.tpp"
 
 #endif

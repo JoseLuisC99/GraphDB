@@ -1,3 +1,0 @@
-// the configured options and settings for GraphDB
-#define GraphDB_VERSION_MAJOR @GraphDB_VERSION_MAJOR@
-#define GraphDB_VERSION_MINOR @GraphDB_VERSION_MINOR@
